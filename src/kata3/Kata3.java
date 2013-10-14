@@ -1,4 +1,3 @@
-
 package kata3;
 
 import java.io.BufferedInputStream;
@@ -16,13 +15,14 @@ public class Kata3 {
     private HashMap<String, Integer> domainMap;
     
     public void execute(String filename) throws FileNotFoundException, IOException{
-       
+        // SE SUPONE QUE COMO ATRIBUTO HAY UN ARCHIVO EN EL QUE APARECE UNA LISTA 
+        // DE CORREOS DE DISTINTOS DOMINIOS
         domainMap = new HashMap<>();  
         BufferedReader reader = new BufferedReader(new FileReader(filename));
         while(true){
             String mail = reader.readLine();
             if (mail==null) break;
-            String domain = mail.split("@")[1].toLowerCase(); // abria que elegir el archivo en el que estan los correos como atributo 
+            String domain = mail.split("@")[1].toLowerCase(); // Habría que elegir el archivo en el que estan los correos como atributo
             if(domainMap.containsKey(domain))
                 domainMap.put(domain, domainMap.get(domain) + 1);
             else
@@ -113,8 +113,6 @@ public class Kata3 {
          String mail = "jose.lopez@gmail.com";
          String domain = mail.split("@")[1].toLowerCase();
          System.out.println(domain);
-                     
-         
-         
+
     }
 }
