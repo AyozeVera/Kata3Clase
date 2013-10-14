@@ -1,21 +1,19 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package kata3;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-/**
- *
- * @author Ayoze
- */
 public class Kata3 {
 
   
     
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) throws FileNotFoundException, IOException {
        /* File[] roots = File.listRoots();
         File c = roots[1];
         File[] files = c.listFiles();
@@ -23,8 +21,9 @@ public class Kata3 {
         for (File file : roots) {
             System.out.println(file.getName() + " isHidden:" + file.isHidden() + "isDirectory" + file.isDirectory());
         }*/
-            
-        File file = new File("C:/Users/clocal/Downloads/" /*/prueba.txt*/ );
+           
+     /*   
+        File file = new File("C:/Users/clocal/Downloads/"  );// /prueba.txt
         System.out.println(file.exists());
         file.mkdir();
         System.out.println(file.exists());
@@ -40,8 +39,27 @@ public class Kata3 {
         catch (NullPointerException e){
             System.out.println(e.getMessage());
         }
+     */    
         
-        
-        //BufferedReader reader = new BufferedReader(new InputString)
+        // falla y no se xk: BufferedReader reader = new BufferedReader(new InputStreamReader());
+        //String line = reader.readLine();
+         BufferedInputStream inputStream = 
+                 new BufferedInputStream(
+                 new FileInputStream(
+                 new File("C:/Users/Ayoze/prueba.txt")));
+         while(true){
+             int data = inputStream.read();
+             if(data < 0) break;
+             System.out.print((char) data);
+                 
+         }
+         //Click derecho en el proyecto, propiedades, run, y en arguements pongo la ruta del archivo
+         //para hacerte un software de consola con introducción de parámetros
+            
+         //Pruebas con UTF8 en sublime
+         
+         
+    
+    
     }
 }
