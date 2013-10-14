@@ -58,8 +58,22 @@ public class Kata3 {
             
          //Pruebas con UTF8 en sublime
          
+         //Sustituir los InputStream por Reader para utilizar readers
+         // Reader tiene un metodo .readLine() para leer linea a linea
          
-    
-    
+         //Convertir String a Reader = InputStringReader
+         
+         //Diferencia entre Reader y Stream:
+         //Stream lee byte a byte, el reader entiende los formatos de representación del texto
+         //Stream te obliga a hacer la conversion a mano
+         //Stream para formato binario, Reader para texto
+         
+         BufferedReader reader = 
+                 new BufferedReader(
+                 new InputStreamReader(System.in));
+         reader.readLine();
+         
+         
+         
     }
 }
